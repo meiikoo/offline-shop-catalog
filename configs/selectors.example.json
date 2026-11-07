@@ -1,0 +1,20 @@
+{
+  "title": "Custom shop",
+  "sources": [
+    {
+      "name": "Products",
+      "url": "https://example.com/shop",
+      "adapter": "selectors",
+      "currency": "EUR",
+      "decimal_separator": ",",
+      "selectors": {
+        "card": ".product-card",
+        "title": ".product-title",
+        "price": ".price",
+        "image": "img",
+        "link": "a",
+        "next": "a.next"
+      }
+    }
+  ]
+}

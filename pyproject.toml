@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "offline-shop-catalog"
+version = "0.1.0"
+description = "Turn supported shopping websites into portable offline image and price catalogs"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["requests>=2.32,<3", "beautifulsoup4>=4.12,<5", "Pillow>=11,<13", "reportlab>=4.2,<5"]
+
+[project.scripts]
+shop-catalog = "offline_catalog.cli:main"
+
+[tool.setuptools.package-data]
+offline_catalog = ["template.html"]
+
+[tool.setuptools.packages.find]
+include = ["offline_catalog*"]

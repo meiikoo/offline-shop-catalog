@@ -1,0 +1,12 @@
+[
+  {
+    "url": "https://example.com/products/example",
+    "title": "Example product - replace this row",
+    "price": 29.95,
+    "max_price": 29.95,
+    "currency": "USD",
+    "available": null,
+    "image_source": "https://example.com/product.jpg",
+    "collection": "Imported"
+  }
+]

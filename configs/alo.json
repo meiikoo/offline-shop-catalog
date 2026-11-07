@@ -1,0 +1,55 @@
+{
+  "title": "ALO Offline Catalog",
+  "sources": [
+    {
+      "name": "New arrivals",
+      "url": "https://www.aloyoga.com/collections/new-arrivals",
+      "adapter": "shopify"
+    },
+    {
+      "name": "Best sellers",
+      "url": "https://www.aloyoga.com/collections/bestsellers",
+      "adapter": "shopify"
+    },
+    {
+      "name": "Matching sets",
+      "url": "https://www.aloyoga.com/collections/best-sets-1",
+      "adapter": "shopify"
+    },
+    {
+      "name": "Pants",
+      "url": "https://www.aloyoga.com/collections/pants",
+      "adapter": "shopify"
+    },
+    {
+      "name": "Sweatshirts",
+      "url": "https://www.aloyoga.com/collections/womens-sweatshirts-hoodies",
+      "adapter": "shopify"
+    },
+    {
+      "name": "Mens",
+      "url": "https://www.aloyoga.com/collections/mens-bestsellers",
+      "adapter": "shopify"
+    },
+    {
+      "name": "Yoga",
+      "url": "https://www.aloyoga.com/collections/yoga",
+      "adapter": "shopify"
+    },
+    {
+      "name": "Run",
+      "url": "https://www.aloyoga.com/collections/run",
+      "adapter": "shopify"
+    },
+    {
+      "name": "Pilates",
+      "url": "https://www.aloyoga.com/collections/pilates",
+      "adapter": "shopify"
+    },
+    {
+      "name": "Train",
+      "url": "https://www.aloyoga.com/collections/train",
+      "adapter": "shopify"
+    }
+  ]
+}

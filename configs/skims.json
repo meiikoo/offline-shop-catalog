@@ -1,0 +1,75 @@
+{
+  "title": "SKIMS Offline Catalog",
+  "sources": [
+    {
+      "name": "New arrivals",
+      "url": "https://skims.com/collections/new-arrivals",
+      "adapter": "skims"
+    },
+    {
+      "name": "Best sellers",
+      "url": "https://skims.com/collections/best-sellers",
+      "adapter": "skims"
+    },
+    {
+      "name": "Clothing",
+      "url": "https://skims.com/collections/clothing",
+      "adapter": "skims"
+    },
+    {
+      "name": "Bras",
+      "url": "https://skims.com/collections/bras",
+      "adapter": "skims"
+    },
+    {
+      "name": "Underwear",
+      "url": "https://skims.com/collections/underwear",
+      "adapter": "skims"
+    },
+    {
+      "name": "Shapewear",
+      "url": "https://skims.com/collections/shapewear",
+      "adapter": "skims"
+    },
+    {
+      "name": "Mens",
+      "url": "https://skims.com/collections/menswear",
+      "adapter": "skims"
+    },
+    {
+      "name": "Accessories",
+      "url": "https://skims.com/collections/accessories",
+      "adapter": "skims"
+    },
+    {
+      "name": "Kids",
+      "url": "https://skims.com/collections/kids-outfits",
+      "adapter": "skims"
+    },
+    {
+      "name": "NikeSKIMS",
+      "url": "https://skims.com/collections/nikeskims",
+      "adapter": "skims"
+    },
+    {
+      "name": "Sale",
+      "url": "https://skims.com/collections/skims-sale",
+      "adapter": "skims"
+    },
+    {
+      "name": "Pajamas",
+      "url": "https://skims.com/collections/pajamas",
+      "adapter": "skims"
+    },
+    {
+      "name": "Loungewear",
+      "url": "https://skims.com/collections/loungewear",
+      "adapter": "skims"
+    },
+    {
+      "name": "Matching sets",
+      "url": "https://skims.com/collections/two-piece-sets",
+      "adapter": "skims"
+    }
+  ]
+}

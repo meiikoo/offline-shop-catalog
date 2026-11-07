@@ -1,0 +1,66 @@
+name: Build offline shopping catalog
+on:
+  workflow_dispatch:
+    inputs:
+      preset:
+        description: Website preset (custom uses URL below)
+        type: choice
+        options: [skims, alo, custom]
+        default: skims
+      url:
+        description: Public collection/product URL for custom mode
+        type: string
+        default: ''
+      adapter:
+        description: Adapter for custom mode
+        type: choice
+        options: [auto, shopify, skims, generic]
+        default: auto
+      max_products:
+        description: Maximum unique products (1-10000)
+        type: string
+        default: '200'
+      max_pages:
+        description: Global page budget (1-2000)
+        type: string
+        default: '50'
+      pdf:
+        description: Include an offline PDF for phones
+        type: boolean
+        default: true
+permissions:
+  contents: read
+concurrency:
+  group: offline-catalog-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install package
+        run: python -m pip install .
+      - name: Install PDF font
+        if: inputs.pdf
+        run: sudo apt-get update && sudo apt-get install -y fonts-wqy-zenhei
+      - name: Build catalog
+        env:
+          CATALOG_PRESET: ${{ inputs.preset }}
+          CATALOG_URL: ${{ inputs.url }}
+          CATALOG_ADAPTER: ${{ inputs.adapter }}
+          CATALOG_MAX_PRODUCTS: ${{ inputs.max_products }}
+          CATALOG_MAX_PAGES: ${{ inputs.max_pages }}
+          CATALOG_PDF: ${{ inputs.pdf }}
+        run: python scripts/run_action.py
+      - name: Upload catalog and failure reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: offline-shopping-catalog
+          path: output/
+          if-no-files-found: warn
+          retention-days: 7
