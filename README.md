@@ -2,6 +2,30 @@
 
 把支持的购物网站转换为可离线浏览的大图商品目录，输出 HTML、图片、JSON、可选 PDF 和 ZIP。适合先看清图片、价格，再回官网查看尺码或购买。
 
+## 作品集：Alo & SKIMS
+
+从这两个实际完成的离线商城项目出发，我们把采集、图片保存和目录导出整理成了可复用的工作流。以下是 2026 年 11 月 7 日的成果快照；定制版界面与当前通用导出模板可能有所不同。
+
+### Alo · 离线运动衣橱
+
+**2,528 件去重商品 · 大图与美元价格 · 离线网页 / 手机 PDF / ZIP**
+
+保留简洁的黑白风格，以大图网格展示商品，支持分类、搜索、排序、收藏及商品详情。
+
+![Alo 离线商城桌面展示：大图、商品名称与美元价格](docs/portfolio/alo-desktop.jpg)
+
+### SKIMS · 离线衣橱
+
+**1,591 条商品/颜色记录 · 14 个主要分类 · 100 页分类数据 · 离线网页 / 手机 PDF / ZIP**
+
+采用暖白与棕色界面，突出商品图片和价格，支持分类筛选与收藏。记录范围以分类页展示为准，不代表全部颜色或完整尺码库存。
+
+![SKIMS 离线商城桌面展示：暖色界面与商品大图](docs/portfolio/skims-desktop.jpg)
+
+以上为独立工具的效果展示，与 Alo / SKIMS 无隶属或背书关系。截图中的品牌、商品图片和文案属于各自权利人，不适用本仓库的 MIT 代码许可。仓库不附带完整商品数据、图片包或 PDF；快照价格与库存不会自动更新。
+
+[开始使用](#快速开始) · [运行 GitHub Actions](https://github.com/meiikoo/offline-shop-catalog/actions/workflows/catalog.yml)
+
 **这是可扩展工具，不是“任何网站都能抓”的承诺。** 不绕过登录、验证码、付费墙或访问限制。不同网站可能需要配置或新增适配器。源站文本只作为数据解析，不执行页面中的脚本指令。
 
 ## 支持范围
@@ -94,7 +118,7 @@ output/catalog-offline.zip
 
 ## GitHub Actions 工作流
 
-发布到 GitHub 后：
+在本仓库运行，或 Fork 到自己的账号后运行：
 
 1. 进入仓库 Actions → Build offline shopping catalog → Run workflow。
 2. 选 skims、alo 或 custom。custom 填公开网址和适配器。
@@ -150,19 +174,6 @@ python -m unittest discover -s tests -v
 
 测试覆盖分页、重复页面、SKIMS 数据解码、JSON-LD、CSS 价格、缺失值、多币种、HTML 转义、PDF/ZIP 和失败报告。CI 使用 Windows/Linux 与 Python 3.11/3.12；单元测试不访问外部商店。真实站点可能改版，离线单元测试不保证实时网站一直可用。
 
-## 稍后发布到你的 GitHub
+## 许可证
 
-本项目默认保持私有。源码不包含之前 Alo/SKIMS 的商品目录、图片、账户令牌或生成文件。
-
-在项目目录登录并创建仓库：
-
-~~~bash
-gh auth login --hostname github.com --git-protocol https --web
-gh repo create offline-shop-catalog --private --source=. --remote=origin --push
-~~~
-
-本地已建立 Git 仓库和初始提交时，可直接运行以上命令。若你自行从 ZIP 解压使用，需先 git init、git add . 和 git commit。
-
-官方说明：[GitHub CLI 创建仓库](https://cli.github.com/manual/gh_repo_create)、[Actions 产物与保留期限](https://docs.github.com/en/actions/tutorials/store-and-share-data)。
-
-源码的分享许可可在决定公开仓库时另行选择。商品图片和文案的权利仍属于各自权利人；请仅在有权访问和保存的范围内使用，并遵守网站规则。
+本项目代码采用 [MIT License](LICENSE)。作品集截图中的第三方品牌、商品图片与文案不包含在此许可中。
